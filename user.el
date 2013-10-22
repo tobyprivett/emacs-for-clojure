@@ -65,4 +65,7 @@
 (setq backup-directory-alist `(("." . "~/.saves")))
 
 ;; enable hash key on macbook
-(global-unset-key (kbd "M-3") 'lambda () (interactive) (insert "#"))
+(global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
+
+;; enable paredit in nrepl
+(add-hook 'nrepl-repl-mode-hook 'paredit-mode)
