@@ -55,6 +55,11 @@
   '(add-to-list 'ac-modes 'nrepl-mode))
 (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
 
+(add-to-list 'load-path "~/.emacs.d/emacs-nav/")
+(require 'nav)
+(nav-disable-overeager-window-splitting)
+(global-set-key [f8] 'nav-toggle)
+
 ;; hippie expand - don't try to complete with file names
 (setq hippie-expand-try-functions-list (delete 'try-complete-file-name hippie-expand-try-functions-list))
 (setq hippie-expand-try-functions-list (delete 'try-complete-file-name-partially hippie-expand-try-functions-list))
